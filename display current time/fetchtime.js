@@ -21,17 +21,23 @@ var utcSecond = localDate.getUTCSeconds();
 if (local24Hour > 12) {
 	var local12Hour = local24Hour - 12;
 	var localAmOrPm = 'PM';
-} else {
+} else if (local24Hour <= 12 && local24Hour != '0') {
 	var local12Hour = local24Hour;
 	var localAmOrPm = 'AM';
+} else if (local12Hour = '0') {
+	var local12Hour = local24Hour = '12';
+	var localAmOrPm = 'PM';
 }
 
 if (utc24Hour > 12) {
 	var utc12Hour = utc24Hour - 12;
 	var utcAmOrPm = 'PM';
-} else {
+} else if (utc24Hour <= 12 && utc24Hour != '0') {
 	var utc12Hour = utc24Hour;
 	var utcAmOrPm = 'AM';
+} else if (local12Hour = '0') {
+	var utc12Hour = utc24Hour = '12';
+	var utcAmOrPm = 'PM';
 }
 
 if (localMinute < 10) {
@@ -58,7 +64,6 @@ if (utcSecond < 10) {
 	var addZero2b = '';
 }
 
-var localTime = localDate.toLocaleDateString() + ' - ' + localDate.toLocaleTimeString();
 var localTime = localMonth + '/' + localDay + '/' + localYear + ' - ' + local12Hour + ':' + addZero1a + localMinute + ':' + addZero2a + localSecond + ' ' + localAmOrPm;
 var utcTime = utcMonth + '/' + utcDay + '/' + utcYear + ' - ' + utc12Hour + ':' + addZero1b + utcMinute + ':' + addZero2b + utcSecond + ' ' + utcAmOrPm;
 var unixTime = Date.now();
