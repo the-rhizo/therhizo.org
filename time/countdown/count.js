@@ -62,3 +62,5 @@ document.getElementById("times1").innerHTML = times_a;
 setTimeout(fetch1, 17);
 	
 }
+
+fetch1();
