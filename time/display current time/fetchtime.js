@@ -29,7 +29,7 @@ if (local24Hour > 12) {
 	var localAmOrPm = 'PM';
 }
 
-if (utc24Hour > 12) {
+if (utc24Hour >= 12) {
 	var utc12Hour = utc24Hour - 12;
 	var utcAmOrPm = 'PM';
 } else if (utc24Hour <= 12 && utc24Hour != '0') {
@@ -37,7 +37,7 @@ if (utc24Hour > 12) {
 	var utcAmOrPm = 'AM';
 } else if (local12Hour = '0') {
 	var utc12Hour = utc24Hour = '12';
-	var utcAmOrPm = 'PM';
+	var utcAmOrPm = 'AM';
 }
 
 if (localMinute < 10) {
@@ -72,7 +72,7 @@ document.getElementById("localtime").innerHTML = 'Local Time: ' + localTime;
 document.getElementById("utctime").innerHTML = 'Universal Time: ' + utcTime;
 document.getElementById("unixtime").innerHTML = 'Unix Time (ms): ' + unixTime;
 	
-setTimeout(fetchtime, 17);
+setTimeout(fetchtime, 50);
 	
 }
 
