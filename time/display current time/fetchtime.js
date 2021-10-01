@@ -26,7 +26,7 @@ if (local24Hour > 12) {
 	var localAmOrPm = 'AM';
 } else if (local12Hour = '0') {
 	var local12Hour = local24Hour = '12';
-	var localAmOrPm = 'PM';
+	var localAmOrPm = 'AM';
 }
 
 if (utc24Hour >= 12) {
