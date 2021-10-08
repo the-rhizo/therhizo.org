@@ -80,7 +80,7 @@ if ($result5_b > 0 ) {
     		<div style="display: inline-block; text-align: right;">
 				Annual Rate (APR): %<input required type="text" size="6" name="value1_b" required value="<?php echo $_POST['value1_b'] ?>"><br>
 				Compound: <select required name="value2_b"><br>
-            	<option value="999999999999">Continuous</option>
+            			<option value="999999999999">Continuous</option>
 				<option value="365">Daily</option>
 				<option value="52">Weekly</option>
 				<option value="12">Monthly</option>
