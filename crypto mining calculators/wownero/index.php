@@ -12,12 +12,12 @@ $btcusdprice = $decoded2->price;
 $unroundedwowusdprice = ($wowbtcprice * $btcusdprice);
 $wowusdprice = number_format($unroundedwowusdprice, 5);
 //-----------------------------------------------------------
-$json4 = file_get_contents('http://node.suchwow.xyz:34568/get_info');
+$json4 = file_get_contents('http://node.wownero.club:34568/get_info');
 $decoded4 = json_decode($json4);
 $difficulty = $decoded4->difficulty;
 //-----------------------------------------------------------
 $command = <<<EOT
-curl http://node.suchwow.xyz:34568/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_last_block_header"}' -H 'Content-Type: application/json';
+curl http://node.wownero.club:34568/json_rpc -d '{"jsonrpc":"2.0","id":"0","method":"get_last_block_header"}' -H 'Content-Type: application/json';
 EOT;
 $json3 = shell_exec($command);
 $decoded3 = json_decode($json3);
